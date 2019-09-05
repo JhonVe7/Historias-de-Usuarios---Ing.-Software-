@@ -24,6 +24,7 @@ create table Documentos(
     permisos varchar(20),
     primary key (id_documento)
 );
+
 ALTER TABLE rol ADD FOREIGN KEY (rol) REFERENCES usuario(username);
 ALTER TABLE Documentos ADD FOREIGN KEY (autor) REFERENCES usuario (username);
 ALTER TABLE Documentos ADD FOREIGN KEY (permisos) REFERENCES usuario (username);
