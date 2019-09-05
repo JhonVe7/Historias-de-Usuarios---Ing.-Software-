@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <title>Registro de Usuarios</title>
+</head>
+<body>
+    <h1 id="bienvenida">Bienvenidos, por favor registrese</h1>  
+    <section>
+        <form action="arhicvo php" method="POST" id="tablaRegistro">
+            <div>
+                <input type="text" name="Nombre" placeholder="Nombre" onblur="this.placeholder = 'Nombre'">
+            </div>
+            <div>
+                <input type="text" name="Apellido" placeholder="Apellido" onblur="this.placeholder = 'Apellido'">
+            </div>
+            <div>
+                <input type="email" name="Email" placeholder="Email" onblur="this.placeholder = 'Email'">
+            </div>
+            <div>
+                <input type="text" name="Username" placeholder="Username" onblur="this.placeholder = 'Username'">
+            </div>
+            <div>
+                <input type="password" name="Contraseña" placeholder="Contraseña" onblur="this.placeholder = 'Contraseña'">
+            </div>
+            <div>
+                <button type="submit">Registrarse</button>
+            </div>
+        </form>
+    </section>
+    <section>
+        <span style="text-align: center"><h2> O si ya estas registrado, <a href="#top">Ingresa aquí</a></h2></span>
+    </section>
+</body>
+</html>

@@ -1,0 +1,5 @@
+commit b15bddfd9859e8109c1388c6d6bb50491757bca2
+Author: Danny <danilo.castilla.contreras@gmail.com>
+Date:   Wed Sep 4 22:17:35 2019 -0500
+
+    Se subió el registro del usuario
