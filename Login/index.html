@@ -10,26 +10,64 @@
 <body>
     <h1 id="bienvenida">Bienvenidos, por favor registrese</h1>  
     <section>
-        <form action="arhicvo php" method="POST" id="tablaRegistro">
+        <form name='form1' onsubmit='return validar();'action="arhicvo php" method="POST" id="tablaRegistro" >
             <div>
-                <input type="text" name="Nombre" placeholder="Nombre" onblur="this.placeholder = 'Nombre'">
+                <input type="text" id="nombre" name="Nombre" placeholder="Nombre" onblur="this.placeholder = 'Nombre'">
             </div>
             <div>
-                <input type="text" name="Apellido" placeholder="Apellido" onblur="this.placeholder = 'Apellido'">
+                <input type="text" id="apellido"name="Apellido" placeholder="Apellido" onblur="this.placeholder = 'Apellido'">
             </div>
             <div>
-                <input type="email" name="Email" placeholder="Email" onblur="this.placeholder = 'Email'">
+                <input type="email" id="email" name="Email" placeholder="Email" onblur="this.placeholder = 'Email'">
             </div>
             <div>
-                <input type="text" name="Username" placeholder="Username" onblur="this.placeholder = 'Username'">
+                <input type="text" id="username"name="Username" placeholder="Username" onblur="this.placeholder = 'Username'">
             </div>
             <div>
-                <input type="password" name="Contraseña" placeholder="Contraseña" onblur="this.placeholder = 'Contraseña'">
+                <input type="password" id="password" name="Contraseña" placeholder="Contraseña" onblur="this.placeholder = 'Contraseña'">
             </div>
             <div>
                 <button type="submit">Registrarse</button>
             </div>
         </form>
+        <script type='text/javascript'>
+
+        function validar(){
+   
+            var valido = true;
+   
+            if(document.getElementById('nombre').value.length < 2 ){
+                valido = false;
+                alert("Tiene que ser un nombre mas largo");
+            }
+    
+            if(document.getElementById('apellido').value.length < 2 ){
+                valido = false;
+                alert("Tiene que ser un apellido mas largo");
+            }
+            var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+            var email = document.form1.email.value;
+            
+            if (!expresion.test(email)){
+                valido = false;
+            }
+            if(document.getElementById('username').value < 4){
+                valido = false;
+                alert("Intenta otro usuario");
+            }
+
+            if(document.getElementById('password').value < 4){
+                valido = false;
+                alert("Tiene que ser una contraseña mas larga");
+            }
+            if(!valido){
+                alert('Algunos campos no están correctos, vuelva a revisarlos');
+            }
+    
+            return valido;
+        }
+    
+    </script>
     </section>
     <section>
         <span style="text-align: center"><h2> O si ya estas registrado, <a href="#top">Ingresa aquí</a></h2></span>
