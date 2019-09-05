@@ -8,20 +8,13 @@ create table usuario(
      email varchar(50),
      nombre char(10),
      apellido char(10),
+     rol char(10),
      primary key (username)
 );
-
-create table roles(
-	
-	id_rol int,
-    username_rol char(25),
-    tipo_rol char(25),
-	primary key (id_rol),
-    foreign key(username_rol) references usuario(username)
+create table Documentos(
+	id_documento int(8) auto_increment,
+    nombre char(25),
+    autor char(25),
+    foreign key (autor) references usuario(username)
 );
-
-create table administrador(
-	username_admin char(25),
-    permisos char (25),
-    foreign key (username_admin) references roles(username_rol)
-);
+select * from usuario;
