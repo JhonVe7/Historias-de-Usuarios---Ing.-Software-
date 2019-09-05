@@ -8,13 +8,21 @@ create table usuario(
      email varchar(50),
      nombre char(10),
      apellido char(10),
-     rol char(10),
+     rol int(11),
      primary key (username)
 );
+
+create table rol(
+	 id_rol int(11) auto_increment,
+     email varchar(50),
+     primary key (id_rol),
+	foreign key (id_rol) references usuario(rol)
+
+);
+
 create table Documentos(
 	id_documento int(8) auto_increment,
     nombre char(25),
     autor char(25),
     foreign key (autor) references usuario(username)
 );
-select * from usuario;
