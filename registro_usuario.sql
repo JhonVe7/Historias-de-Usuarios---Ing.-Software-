@@ -14,8 +14,7 @@ create table usuario(
 create table rol(
      id_rol int(11) auto_increment,
      rol varchar(20),
-     primary key (id_rol),
-     foreign key (id_rol) references usuario(rol)
+     primary key (id_rol)
 );
 
 create table Documentos(
@@ -23,6 +22,8 @@ create table Documentos(
     nombre char(25),
     autor char(25),
     permisos int(11),
-    foreign key (autor) references usuario(username),
-    foreign key (permisos) references usuario(rol)
+    primary key (id_documento)
 );
+ALTER TABLE rol ADD FOREIGN KEY (id_rol) REFERENCES usuario (rol);
+ALTER TABLE Documentos ADD FOREIGN KEY (autor) REFERENCES usuario (username) ;
+ALTER TABLE Documentos ADD FOREIGN KEY (permisos) REFERENCES usuario (rol) ;
