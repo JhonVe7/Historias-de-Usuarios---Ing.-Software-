@@ -38,7 +38,7 @@ if ($count == 1) {
 if ($conexion->query($query) === TRUE) {
     echo "<br />" . "<h1>" . "Usuario Creado Exitosamente!" . "</h1>";
     echo "<h2>" . "Bienvenido: " . $_POST['Username'] . "</h2>" . "\n\n";
-    echo "<h3>" . "Pasar a la plataforma: " . "<a href='./usuarios.html'>Usuario</a>" . "</h3>";
+    echo "<h3>" . "Pasar a la plataforma: " . "<a href='../inicio/usuarios.html'>Usuario</a>" . "</h3>";
 } else {
     echo "Error al crear el usuario." . $query . "<br>" . $conexion->error;
 }
