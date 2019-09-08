@@ -1,5 +1,5 @@
-create database Registro;
-use Registro; 
+create database ingdatabase;
+use ingdatabase; 
 
 create table rol(
 	 id_rol int(11) auto_increment,
