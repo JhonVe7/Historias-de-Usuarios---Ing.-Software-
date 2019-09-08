@@ -1,5 +1,5 @@
-create database Registri;
-use RegistroUseri; 
+create database Registro;
+use Registro; 
 
 create table rol(
 	 id_rol int(11) auto_increment,
