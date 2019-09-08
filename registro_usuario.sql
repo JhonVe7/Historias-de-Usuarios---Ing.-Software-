@@ -18,3 +18,10 @@ create table usuario(
      primary key (id_user),
      foreign key (id_user) references rol(id_rol)
 );
+
+create table Documentos(
+    id_documento int(11) auto_increment,
+    nombre char(25),
+    autor char(25),
+    foreign key (id_documento) references usuario(id_user)
+);
