@@ -13,13 +13,14 @@
 
 		if($resultados->num_rows>0){
 			while($registros = $resultados->fetch_array()){
-				echo $registros['nombre']. <br/>;
+			/*	echo $registros['nombre']. <br/>;
 				echo $registros['apellido']. <br/>;
 				echo $registros['email']. <br/>;
 				echo $registros['username']. <br/>;
 				echo $registros['nombre']. <br/>;
 				echo $registros['id_user']. <br/>;
-
+			*/
+			 print_r($registros); 	
 			}
 		}else{
 
