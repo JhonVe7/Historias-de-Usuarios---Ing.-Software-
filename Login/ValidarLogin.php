@@ -1,6 +1,6 @@
 <?php
 
 echo $Username = $_POST['Username'];
-echo $password = $_POST['contraseña'];
+echo $password = $_POST['Password'];
 
 ?>
