@@ -4,15 +4,15 @@
 	include_once 'conexion.php';
 
 	$username = $_POST['Username'];
-	$password = $_POST['contraseña'];
+	$password = $_POST['Password'];
 
 	//comparar sentencia 
-	$sentenciaSQL = "SELECT * FROM usuar where username ='$usuario' AND contraseña ='$password' ";
+	$sentenciaSQL = "SELECT * FROM usuar where username ='$username' AND contraseña ='$password' ";
 
 	//import method 
 	$resultados = $conexion->query($sentenciaSQL);
 
-		if($resultados->num_rows>0){
+		if($resultados->num_rows(0)){
 
 			while($registros = $resultados->fetch_array()){
 		
