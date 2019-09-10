@@ -10,7 +10,7 @@ $count = mysqli_num_rows($result);
 
 if ($count == 1) {
     echo "<br />" . "El Nombre de Usuario ya a sido tomado." . "<br />";
-    echo "<a href='index.html'>Por favor escoga otro Nombre</a>";
+    echo "<a href='registro.html'>Por favor escoga otro Nombre</a>";
 } else {
 
     /* $clave = $_POST['Contraseña'];
@@ -26,7 +26,7 @@ if ($count == 1) {
 if ($conexion->query($query) === TRUE) {
     echo "<br />" . "<h1>" . "Usuario Creado Exitosamente!" . "</h1>";
     echo "<h2>" . "Bienvenido: " . $_POST['Username'] . "</h2>" . "\n\n";
-    echo "<h3>" . "Pasar a la plataforma: " . "<a href='../inicio/usuarios.html'>Usuario</a>" . "</h3>";
+    echo "<h3>" . "Pasar a la plataforma: " . "<a href='usuario_basico.html'>Usuario</a>" . "</h3>";
 } else {
     echo "Error al crear el usuario." . $query . "<br>" . $conexion->error;
 }
