@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Subir archivos</title>
+    </head>
+    <body>
+        
+        <div style="width: 500px; margin: auto; border: 1px solid burlywood; padding: 30px">
+            <h4>SUBIR PDF</h4>
+            
+            <form action="archivo.php" method="POST" action="" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="titulo"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="file" name="archivo">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="subir" name="subir">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
