@@ -26,7 +26,7 @@ create table metadatos(
 	id_metadato int(11) auto_increment,
 	tamaño int(11),
 	tipe varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
-  ruta varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
+ 	ruta varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
  	id_doc int(11),
 	primary key(id_metadato),  
 	foreign key (id_doc) references Documentos(id_documento)
