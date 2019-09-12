@@ -12,7 +12,7 @@
 	//import method 
 	$resultados = $conexion->query($sentenciaSQL);
 
-		if($resultados->num_rows()>0){
+		if($resultados->mysql_num_rows()>0){
 
 			while($registros = $resultados->fetch_array()){
 		
