@@ -6,7 +6,7 @@
     session_start();
 
     if(!isset($_SESSION['nombreSesion'])){
-        header("location:: Documentos/archivo_template.php");
+        header("location: Documentos/archivo_template.php");
     }
 
 //login

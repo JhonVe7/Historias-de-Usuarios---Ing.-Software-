@@ -4,7 +4,7 @@
     session_start();
 
     if(!isset($_SESSION['nombreSesion'])){
-        header("location:: index.php");
+        header("location: ./ValidarLogin.php");
     }
 
     $iduser = $_SESSION['nombreSesion'];
@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="nav-link active" href="usuario_basico.html">Inicio</a>
             <a class="nav-link" href="archivos.html">Archivos</a>
-            <a class="nav-link" href = CerrarSesion.php>Cerrar sesion</a>
+            <a class="nav-link" href ="CerrarSesion.php">"Cerrar sesion</a>
         </nav> 
         <br>
         <?php
