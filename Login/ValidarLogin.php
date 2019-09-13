@@ -1,14 +1,13 @@
 <?php
 
-	session_start();
-	include_once 'conexion.php';
+	include("conexion.php");
 
 	$username = mysqli_real_scape_string($Conexion, $_POST['Username']);
 	$password = mysqli_real_scape_string($Conexion,$_POST['Password']);
 	$passEncrpit = = shal($password);
 
-	//comparar sentencia 
-	$sentenciaSQL = "SELECT * FROM usuar where username ='$username' AND contraseña ='$password' ";
+	// consulta asignada a una variable
+	$sentenciaSQL = "SELECT id_user FROM usuar where username ='$username' AND contraseña ='$password' ";
 
 	//import method 
 	$resultados = $conexion->query($sentenciaSQL);
