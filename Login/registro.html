@@ -40,14 +40,14 @@
    
             var valido = true;
    
-            if(document.getElementById('nombre').value.length < 2 ){
+            if(document.getElementById('nombre').value.length < 2 && (! isNaN(document.getElementById('nombre')))){
                 valido = false;
-                alert("Tiene que ser un nombre mas largo");
+                alert("Tiene que ser un nombre mas largo y sin numeros");
             }
     
-            if(document.getElementById('apellido').value.length < 2 ){
+            if(document.getElementById('apellido').value.length < 2 && (! isNaN(document.getElementById('apellido')))){
                 valido = false;
-                alert("Tiene que ser un apellido mas largo");
+                alert("Tiene que ser un apellido mas largo y sin numeros");
             }
             var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
             var email = document.form1.email.value;

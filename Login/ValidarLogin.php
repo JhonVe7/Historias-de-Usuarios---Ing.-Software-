@@ -2,6 +2,15 @@
 
 	include './conexion.php';
 
+
+    session_start();
+
+    if(!isset($_SESSION['nombreSesion'])){
+        header("location: Documentos/usuario_basico.html");
+    }
+
+//login
+
 	// define datos de entrada a variables
 	if(!empty($_POST)){
 
