@@ -13,7 +13,6 @@
         </nav> 
         <br>
         <br>
-        <br>
         <div class="container" style="margin-top: 30px;">
             <div class="row">
                 <div class="col-6" style="border: 1px solid #47b6ff; padding: 50px;">
@@ -30,6 +29,7 @@
                                 <td colspan="2">
                                     <input type="file" name="archivo">
                                 </td>
+                                
                             </tr>
                             <tr>
                                 <td>
@@ -39,12 +39,37 @@
                         </table>
                     </form>
                 </div>
-                <div class="col-6"style="border: 1px solid #47b6ff; padding: 50px;">
+                <div class="col-6"style="border: 1px solid #47b6ff; padding: 10px;">
                     <h4>ARCHIVOS</h4>
 
+                    <table>
+                        <tr>
+                            <td>titulo</td>
+                            <td>descripcion</td>
+                            <td>tamaño</td>
+                            <td>tipo</td>
+
+                            <td>nombre</td>
+                        </tr>
+                        <?php
+                            include 'config.inc.php';
+                            $db=new Conect_MySql();
+                            $sql = "select * from tbl_documentos where id_documento=".$_GET['id'];
+                            $query = $db->execute($sql);
+                            if($datos=$db->fetch_row($query)){
+                                
+                                if($datos['nombre_archivo']==""){?>
+                                   <p>NO tiene archivos</p><?php 
+                                }else{ ?>
+                                <iframe src="archivos/<?php echo $datos['nombre_archivo']; ?>"></iframe>
+                                <?php 
+                                } 
+                            } 
+                        ?>
+                    </table>
                 </div>
             </div>
         </div>
-
+        
     </body>
 </html>
