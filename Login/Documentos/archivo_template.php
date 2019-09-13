@@ -32,10 +32,6 @@
             <a class="nav-link" href ="CerrarSesion.php">"Cerrar sesion</a>
         </nav> 
         <br>
-        <?php
-        echo ("bienvenido"); 
-        echo utf8_decode($row['nombre']);
-        ?>
         <br>
         <div class="container" style="margin-top: 30px;">
             <div class="row">
@@ -68,10 +64,10 @@
 
                     <table>
                         <tr>
-                            <td>titulo</td>
-                            <td>descripcion</td>
-                            <td>tamaño</td>
-                            <td>tipo</td>
+                            <td>titulo: </td>
+                            <td>descripcion: </td>
+                            <td>tamaño: </td>
+                            <td>tipo: </td>
 
                             <td>nombre</td>
                         </tr>
