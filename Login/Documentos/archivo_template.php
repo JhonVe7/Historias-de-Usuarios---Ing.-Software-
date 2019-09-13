@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Subir archivos</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     </head>
     <body>
         
@@ -18,7 +19,7 @@
                 <div class="col-6" style="border: 1px solid #47b6ff; padding: 50px;">
                     <h4>SUBIR PDF</h4>
         
-                    <form action="archivo.php" method="POST" action="" enctype="multipart/form-data">
+                    <form action="conex.php" method="POST" action="" enctype="multipart/form-data">
                         <table>
                             <tr>
                                 <td>
@@ -41,31 +42,36 @@
                 </div>
                 <div class="col-6"style="border: 1px solid #47b6ff; padding: 10px;">
                     <h4>ARCHIVOS</h4>
-
                     <table>
-                        <tr>
+                        <!-- <tr>
                             <td>titulo</td>
                             <td>descripcion</td>
                             <td>tamaño</td>
                             <td>tipo</td>
 
                             <td>nombre</td>
-                        </tr>
+                        </tr> -->
                         <?php
-                            include 'config.inc.php';
+                            include 'documentos.php';
                             $db=new Conect_MySql();
-                            $sql = "select * from tbl_documentos where id_documento=".$_GET['id'];
+                            $sql = "SELECT * FROM tbl_documentos ";
                             $query = $db->execute($sql);
-                            if($datos=$db->fetch_row($query)){
-                                
-                                if($datos['nombre_archivo']==""){?>
-                                   <p>NO tiene archivos</p><?php 
-                                }else{ ?>
-                                <iframe src="archivos/<?php echo $datos['nombre_archivo']; ?>"></iframe>
-                                <?php 
-                                } 
-                            } 
-                        ?>
+                            while($datos=$db->fetch_row($query)){?>
+                                <tr>
+                                    <?php 
+                                    echo $datos['titulo']; 
+                                    echo $datos['tamanio'];
+                                    echo $datos['tipo']; 
+                                    echo $datos['nombre'];
+                                    ?>
+                                    <a href="archivo.php ? id=<?php echo $datos['id_documentos']?>">
+                                        <?php 
+                                            echo $datos['nombre']; 
+                                        ?>
+                                    </a>
+                                </tr>
+                            <?php  }?>
+                        
                     </table>
                 </div>
             </div>

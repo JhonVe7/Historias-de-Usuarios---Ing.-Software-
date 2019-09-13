@@ -1,23 +1,21 @@
-<?php
-
-if(isset($_POST['subir'])){
-
-    $nombre = $_FILES['archivo']['name'];
-    $tipo = $_FILES['archivo']['type'];
-    $tamanio = $_FILES['archivo']['size'];
-    $ruta= $_FILES['archivo']['tmp_name'];
-    $destino="archivoos/".$nombre;
-
-    if ($nombre != " ") 
-    {
-        if (copy($ruta, $destino)) 
-        {
-                echo "Se guardo correctamente";
-            
-        }else
-        {
-            echo "Error";
-        }
-    }
-}
-?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <?php
+        include 'documentos.php';
+        $db=new Conect_MySql();
+            $sql = "select*from tbl_documentos where id_documentos=".$_GET['id'];
+            $query = $db->execute($sql);
+            if($datos=$db->fetch_row($query)){
+                if($datos['nombre']==""){?>
+                    <p>NO tiene archivos</p>
+                    <?php }else{ ?>
+                <iframe src="archivoos/<?php echo $datos['nombre']; ?>"></iframe>
+                
+                <?php } } ?>
+    </body>
+</html>

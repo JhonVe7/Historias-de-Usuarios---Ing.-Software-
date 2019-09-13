@@ -20,7 +20,7 @@ if ($count == 1) {
     $form_pass = $_POST['Contraseña'];
     $hash = password_hash($form_pass, PASSWORD_BCRYPT);
 
-    $query = "INSERT INTO usuar VALUES (NULL,'$_POST[Username]','$_POST[Contraseña]','$_POST[Email]','$_POST[Nombre]','$_POST[Apellido]',3)";
+    $query = "INSERT INTO $tbl_name1 VALUES (NULL,'$_POST[Username]','$_POST[Contraseña]','$_POST[Email]','$_POST[Nombre]','$_POST[Apellido]',3)";
 }
 
 if ($conexion->query($query) === TRUE) {
