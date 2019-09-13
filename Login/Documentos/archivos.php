@@ -1,22 +1,3 @@
-<?php
-    include('./conexion.php');
-
-    session_start();
-
-    if(!isset($_SESSION['nombreSesion'])){
-        header("location:: index.php");
-    }
-
-    $iduser = $_SESSION['nombreSesion'];
-
-    $sqlCons = "SELECT id_user,nombre FROM usuar  WHERE id_user ='$iduser' ";
-
-    $resultado = $conexion->query($sqlCons);
-
-    $row = $resultado->fetch_assoc();
-
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,13 +10,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="nav-link active" href="usuario_basico.html">Inicio</a>
             <a class="nav-link" href="archivos.html">Archivos</a>
-            <a class="nav-link" href = CerrarSesion.php>Cerrar sesion</a>
         </nav> 
         <br>
-        <?php
-        echo ("bienvenido"); 
-        echo utf8_decode($row['nombre']);
-        ?>
         <br>
         <div class="container" style="margin-top: 30px;">
             <div class="row">

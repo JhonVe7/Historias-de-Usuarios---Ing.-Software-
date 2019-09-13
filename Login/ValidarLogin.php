@@ -2,6 +2,15 @@
 
 	include './conexion.php';
 
+
+    session_start();
+
+    if(!isset($_SESSION['nombreSesion'])){
+        header("location:: Documentos/archivo_template.php");
+    }
+
+//login
+
 	// define datos de entrada a variables
 	if(!empty($_POST)){
 
