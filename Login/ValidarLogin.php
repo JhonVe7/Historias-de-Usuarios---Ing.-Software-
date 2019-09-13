@@ -23,7 +23,7 @@
 		}else{
 			echo "<script>
 					alert('Datos incorrecto, verifique los datos e intente nuevamente.');
-					window.location ='ValidarLogin.php';
+					window.location = 'ValidarLogin.php';
 				  </script>";
 			}
 	}
