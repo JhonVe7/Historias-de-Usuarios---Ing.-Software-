@@ -1,13 +1,7 @@
 <?php
 
 	include './conexion.php';
-
-
     session_start();
-
-    if(!isset($_SESSION['nombreSesion'])){
-        header("location: Documentos/usuario_basico.html");
-    }
 
 //login
 
@@ -25,7 +19,7 @@
 		$sentenciaSQL = "SELECT * FROM usuar WHERE username ='$username' AND contrasena ='$password'";
 
 		//import method 
-		$resultados = mysqli_query($conexion,$sentenciaSQL);
+		//$resultados = mysqli_query($conexion,$sentenciaSQL);
 		$result = $conexion->query($sentenciaSQL);
 		$rows = $result->num_rows;
 		//$count = mysqli_num_rows($resultados);
@@ -39,6 +33,7 @@
 			echo "<script>
 					alert('Datos incorrecto, verifique los datos e intente nuevamente.');
 				  </script>";
+				  header ("location: ../login/logeo.html");
 			}
 	}
 ?>
@@ -53,7 +48,7 @@
 </head>
 <body>
 	<br>
-	<table>
+	<!-- <table>
         <tr>
             <td>id</td>
             <td>username</td>
@@ -80,6 +75,6 @@
         <?php
         }
         ?>
-    </table>
+    </table> -->
 </body>
 </html>
